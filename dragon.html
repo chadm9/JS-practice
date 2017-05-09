@@ -17,7 +17,7 @@
     <div id="player-health" class="text-center">Player Health: 10</div>
     <div id="dragon-health" class="text-center">Dragon Health: 10</div>
     <div class="text-center">
-        <button class="btn btn-default" onclick="rollDice();">Fight!</button>
+        <button id="fight" class="btn btn-default" onclick="rollDice();">Fight!</button>
         <button class="btn btn-default" onclick="flee();">Flee!</button>
     </div>
     <div class="text-center">
@@ -45,15 +45,17 @@
 
         if(randomDie1 + randomDie2 > 6){
             document.images.dragonImage.src = "https://s-media-cache-ak0.pinimg.com/236x/35/51/94/355194ef6b48a4d4d71a0b46e81dce7e.jpg";
-            document.getElementById('message').innerHTML = "You have defeated the dragon.";
+            document.getElementById('message').innerHTML = "Your attack landed";
             dragonHealth = dragonHealth - 2;
             document.getElementById('dragon-health').innerHTML = "Dragon Health: " + dragonHealth;
             console.log(dragonHealth);
 
 
+
+
         }else{
             document.images.dragonImage.src= "https://s-media-cache-ak0.pinimg.com/originals/04/28/ef/0428efe33c06b7270c5379a1b3d7de1d.jpg";
-            document.getElementById('message').innerHTML = "You have are toast";
+            document.getElementById('message').innerHTML = "Your attack missed!";
             playerHealth = playerHealth - 2;
             document.getElementById('player-health').innerHTML = "Player Health: " + playerHealth;
             console.log(playerHealth);
