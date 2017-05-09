@@ -192,8 +192,8 @@ var highestPoints = 0;
 var bestScoreGuy;
 for(i=0; i<players.length; i++) {
     if (players[i].avgPoints/players[i].avgMinutesPlayed > highestPoints) {
-        highestPoints = players[i].avgPoints/players[i].avgMinutesPlayed
-        bestScoreGuy = players[i].name
+        highestPoints = players[i].avgPoints/players[i].avgMinutesPlayed;
+        bestScoreGuy = players[i].name;
     }
 }
 console.log(highestPoints, bestScoreGuy);
