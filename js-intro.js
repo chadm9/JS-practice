@@ -101,7 +101,39 @@ while (guessed === false);*/
 
 
 
+function Player(name, position, avgM, avgP, avgR, starter){
+    this.name = name;
+    this.position = position;
+    this.avgM = avgM;
+    this.avgP = avgP;
+    this.avgR = avgR;
+    this.starter = starter;
 
+/*    this.reportPPM = function(){
+        var ppm = this.avgP / this.avgM;
+        return ppm;
+    }*/
+
+}
+
+Player.prototype.reportPPM = function(){
+    var ppm = this.avgP / this.avgM;
+    ppm = Math.round(ppm*100/100);
+    return ppm;
+}
+
+Player.prototype.species = "human";
+
+Player.prototype.updatePPM = function(newPPM) {
+    this.ppm = newPPM;
+}
+
+var player1 =  new Player("Steph Curry", "PG", 30.2, 33.1, 4.2, true);
+
+console.log(player1.species);
+
+player1.updatePPM(33.5);
+console.log(player1.ppm);
 
 
 

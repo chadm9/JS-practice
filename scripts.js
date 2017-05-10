@@ -30,6 +30,7 @@ var xDirection = 1;
 var yDirection = 1;
 var n = 1;
 
+
 function drawBall() {
     context.fillStyle = "#FF0000";
     context.beginPath();
@@ -65,11 +66,13 @@ canvas.addEventListener("click", function(event){
         console.log("circle hit");
         n++;
 
+
         //ball = setInterval(drawBall, 20);
     }else{
         n = 1;
         //ball = setInterval(drawBall, 20);
         console.log('missed');
+
 
 
 
