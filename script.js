@@ -42,7 +42,7 @@ canvas.addEventListener('mousemove', function(event){
     if(mouseDown){
         //console.log(event);
         //console.log('mouse down + movement')
-        if(lastMousePosition == null){
+        if(lastMousePosition === null){
             lastMousePosition = {x: event.offsetX, y: event.offsetY}
         }
         mousePosition.x = event.offsetX;
