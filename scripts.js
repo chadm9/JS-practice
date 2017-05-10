@@ -46,8 +46,8 @@ function drawBall() {
     }
 
 
-    x += 4*xDirection;
-    y += 3*yDirection;
+    x += (n+1)*xDirection;
+    y += (n)*yDirection;
     //console.log(x,y);
 }
 
@@ -64,10 +64,11 @@ canvas.addEventListener("click", function(event){
     if(Math.sqrt(Math.pow((event.layerY - y), 2) + Math.pow((event.layerX - x) ,2)) < 2*r){
         console.log("circle hit");
         n++;
-        x += n*xDirection;
-        y += n*yDirection;
-        ball = setInterval(drawBall, 20);
+
+        //ball = setInterval(drawBall, 20);
     }else{
+        n = 1;
+        //ball = setInterval(drawBall, 20);
         console.log('missed');
 
 
