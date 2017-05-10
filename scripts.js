@@ -28,7 +28,7 @@ var y = 200;
 var r = 50;
 var xDirection = 1;
 var yDirection = 1;
-
+var n = 1;
 
 function drawBall() {
     context.fillStyle = "#FF0000";
@@ -47,7 +47,7 @@ function drawBall() {
 
 
     x += 4*xDirection;
-    y += 1*yDirection;
+    y += 3*yDirection;
     //console.log(x,y);
 }
 
@@ -56,14 +56,27 @@ var ball = setInterval(drawBall, 20);
 
 
 
+console.log(n);
+
 canvas.addEventListener("click", function(event){
     //console.log(event);
+
     if(Math.sqrt(Math.pow((event.layerY - y), 2) + Math.pow((event.layerX - x) ,2)) < 2*r){
-        console.log("circle hit")
+        console.log("circle hit");
+        n++;
+        x += n*xDirection;
+        y += n*yDirection;
+        ball = setInterval(drawBall, 20);
     }else{
-        console.log('missed')
+        console.log('missed');
+
+
+
     }
-    console.log(x, y, event.x, event.y)
+
+
 });
+
+
 
 
