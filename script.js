@@ -63,24 +63,53 @@ canvas.addEventListener('mousemove', function(event){
 });
 
 var startTime = new Date();
-console.log(startTime);
+//console.log(startTime);
 
+var secondsPaused = 0;
+
+var paused = false;
+
+
+function pause(){
+    paused = !paused;
+    console.log(paused);
+}
+
+/*setInterval(function(){
+    if(paused) {
+        secondsPaused++;
+        console.log(secondsPaused);
+    }
+}, 1000);*/
+
+
+
+console.log(secondsPaused);
 setInterval(
-    function(){
-        var currentTime = new Date;
-        var totalSeconds = (Date.parse(currentTime) - Date.parse(startTime))/1000;
-        //console.log(totalSeconds);
-        var minutes = Math.floor(totalSeconds/60%60);
-        console.log(minutes);
-        var hours = Math.floor(totalSeconds/60/60%24);
-        console.log(hours);
-        var seconds = Math.floor(totalSeconds%60);
-        console.log(seconds);
-        document.getElementById('hours').innerHTML = hours;
-        document.getElementById('minutes').innerHTML = minutes;
-        document.getElementById('seconds').innerHTML = seconds;
+    function () {
+
+        if(!paused) {
+            var currentTime = new Date;
+            var totalSeconds = (Date.parse(currentTime) - Date.parse(startTime)) / 1000;
+            totalSeconds = totalSeconds - secondsPaused;
+            //console.log(totalSeconds);
+            var minutes = Math.floor(totalSeconds / 60 % 60);
+            //console.log(minutes);
+            var hours = Math.floor(totalSeconds / 60 / 60 % 24);
+            //console.log(hours);
+            var seconds = Math.floor(totalSeconds % 60);
+            //console.log(seconds);
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+        }else{
+            secondsPaused++;
+        }
     }, 1000
 );
+
+
 
 
 
