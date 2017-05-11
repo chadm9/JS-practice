@@ -62,3 +62,25 @@ canvas.addEventListener('mousemove', function(event){
     }
 });
 
+var startTime = new Date();
+console.log(startTime);
+
+setInterval(
+    function(){
+        var currentTime = new Date;
+        var totalSeconds = (Date.parse(currentTime) - Date.parse(startTime))/1000;
+        //console.log(totalSeconds);
+        var minutes = Math.floor(totalSeconds/60%60);
+        console.log(minutes);
+        var hours = Math.floor(totalSeconds/60/60%24);
+        console.log(hours);
+        var seconds = Math.floor(totalSeconds%60);
+        console.log(seconds);
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+    }, 1000
+);
+
+
+

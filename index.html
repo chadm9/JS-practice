@@ -36,10 +36,15 @@
             margin-left: 170px;
             background: linear-gradient(white, gray);
             width: 592px;
+            display: inline-block;
 
         }
         .choose{
             padding-left: 2px;
+        }
+        .timer{
+
+            display: inline-block;
         }
 
     </style>
@@ -52,6 +57,17 @@
         <input type="color" id="color-picker" />
         <label>Choose your marker thickness</label>
         <input type="number" id="thickness" placeholder="10" />
+    </div>
+    <div class="timer">
+        <span id="seconds"></span>
+        <span class="smalltext">seconds</span>
+
+        <span id="minutes"></span>
+        <span class="smalltext">minutes</span>
+
+        <span id="hours"></span>
+        <span class="smalltext">hours</span>
+
     </div>
 
     <canvas class="main" id="canvas" width="548px" height="354px"></canvas>

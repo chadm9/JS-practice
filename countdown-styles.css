@@ -1,0 +1,31 @@
+#timer-div{
+    background-color: red;
+    color: white;
+    display: inline-block;
+    font-size: 30px;
+}
+
+body{
+    height: 100vh;
+    background: url("http://img08.deviantart.net/cb7b/i/2013/357/3/5/a_kennedy_tiny_toon_christmas_by_orangefuzzz-d6z0nxx.png") no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+
+h1{
+    color: #396;
+    font-size: 40px;
+    margin: 40px 0px 20px;
+}
+
+.time-unit, .time-unit > span{
+    padding: 10px;
+    border-radius: 3px;
+    background: hotpink;
+    display: inline-block;
+}
+/*target divs one layer below timer-div*/
+#timer-div > div{
+
+}
+
